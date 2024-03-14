@@ -8,4 +8,8 @@
     <string name="contadeluz">Quanto é sua conta de luz por mês?</string>
     <string name="conta_gas">Quanto você gasta de gás por mês?</string>
     <string name="front_page">Esse aplicativo leva em conta apenas gastos individuais, ignorando gastos coletivos como ônibus e trens.</string>
+    <string name="conta_combustivel">Quanto você gasta de combustível mensalmente?</string>
+    <string name="kms">Qual sua quilometragem anual?</string>
+    <string name="voosMenores">Quantos voôs menores que quatro horas você fez?</string>
+    <string name="quantos_vo_s_maiores_que_quatro_horas_voc_fez">Quantos voôs maiores que quatro horas você fez?</string>
 </resources>

@@ -10,12 +10,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.lmz.pegadadecarnono.databinding.FragmentQuestion2Binding;
+import com.lmz.pegadadecarnono.databinding.FragmentQuestionTwoBinding;
 import com.lmz.pegadadecarnono.interfaces.FragmentToActivity;
 
 
 public class QuestionTwo extends Fragment implements FragmentToActivity {
-    private FragmentQuestion2Binding binding;
+    private FragmentQuestionTwoBinding binding;
     private QuestionListener listener;
     public interface QuestionListener{
         void onQuestionTwoInput(String input);
@@ -37,18 +37,25 @@ public class QuestionTwo extends Fragment implements FragmentToActivity {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentQuestion2Binding.inflate(inflater,container,false);
+        binding = FragmentQuestionTwoBinding.inflate(inflater,container,false);
+        binding.contaGas.setText(String.valueOf(0.00f));
+        binding.contaGas.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                binding.contaGas.setText("");
+            }
+        });
         return binding.getRoot();
     }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if (context instanceof QuestionOne.QuestionListener) {
+        if (context instanceof QuestionListener) {
             listener = (QuestionListener) context;
         } else {
             throw new RuntimeException(context.toString()
-                    + " deve implementar a interface OnQuestion1DataListener");
+                    + " deve implementar a interface OnQuestionTwoDataListener");
         }
     }
 
