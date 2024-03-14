@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:background="#35C86B">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragcontainer"
+        android:layout_width="407dp"
+        android:layout_height="506dp"
+        android:layout_marginTop="140dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></androidx.fragment.app.FragmentContainerView>
+
+    <Button
+        android:id="@+id/proximo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#3EC7DC"
+        android:text="@string/pr_ximo"
+        app:backgroundTint="#258290"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toBottomOf="@+id/fragcontainer" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="208dp" />
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#3EC7DC"
+        android:text="@string/voltar"
+        app:backgroundTint="#258290"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/proximo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragcontainer" />
+</androidx.constraintlayout.widget.ConstraintLayout>

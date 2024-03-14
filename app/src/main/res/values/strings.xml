@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PegadaDeCarnono</string>
+    <string name="pr_ximo">Próximo</string>
+    <string name="confirmar">Confirmar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="voltar">Voltar</string>
+    <string name="contadeluz">Quanto é sua conta de luz por mês?</string>
+    <string name="conta_gas">Quanto você gasta de gás por mês?</string>
+    <string name="front_page">Esse aplicativo leva em conta apenas gastos individuais, ignorando gastos coletivos como ônibus e trens.</string>
+</resources>
