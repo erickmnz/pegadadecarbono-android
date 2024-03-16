@@ -12,4 +12,6 @@
     <string name="kms">Qual sua quilometragem anual?</string>
     <string name="voosMenores">Quantos voôs menores que quatro horas você fez?</string>
     <string name="quantos_vo_s_maiores_que_quatro_horas_voc_fez">Quantos voôs maiores que quatro horas você fez?</string>
+    <string name="reciclaPapel">Você recicla papel, jornal ou papelão?</string>
+    <string name="reciclaAluminio">Você recicla alumínio?</string>
 </resources>

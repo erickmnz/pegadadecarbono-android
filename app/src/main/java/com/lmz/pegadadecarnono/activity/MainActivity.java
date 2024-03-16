@@ -43,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
         q1=new QuestionOne();
         q2=new QuestionTwo();
         q3=new QuestionThree();
+        q4=new QuestionFour();
+        q5=new QuestionFive();
+        q6=new QuestionSix();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         binding.voltar.setVisibility(View.INVISIBLE);
         View view = binding.getRoot();
@@ -96,6 +99,39 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
                                 .show();
                         break;
                     }
+                    fm.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(binding.fragcontainer.getId(),q4,"Question4")
+                            .commit();
+                    n++;
+                    break;
+                }
+                case 4:{
+                    if(!q4.sendToActivity()){
+                        Toast.makeText(this,"Insira um valor!",Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                    }
+                    fm.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(binding.fragcontainer.getId(),q5,"Question5")
+                            .commit();
+                    n++;
+                    break;
+                }
+                case 5:{
+                    if(!q5.sendToActivity()){
+                        Toast.makeText(this,"Insira um valor!",Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                    }
+                    fm.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(binding.fragcontainer.getId(),q6,"Question6")
+                            .commit();
+                    binding.proximo.setText("Confirmar");
+                    n++;
+                    break;
                 }
             }
         });
@@ -126,6 +162,20 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
                   n--;
                   break;
               }
+              case 5:{
+                  fm.popBackStack();
+                  nums[4]=0f;
+                  nums[5]=0f;
+                  n--;
+                  break;
+              }
+              case 6:{
+                  fm.popBackStack();
+                  nums[6]=0f;
+                  nums[7]=0f;
+                  n--;
+                  break;
+              }
           }
         });
     }
@@ -138,12 +188,12 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
 
     @Override
     public void onQuestionTwoInput(String input) {
-        nums[1]=Float.parseFloat(input)*105;
+        nums[1]=Float.parseFloat(input)*105f;
     }
 
     @Override
     public void onQuestionThreeInput(String input) {
-        nums[2]=(Float.parseFloat(input)/1609)*113;
+        nums[2]=(Float.parseFloat(input)/1609)*113f;
     }
 
     @Override
@@ -152,8 +202,8 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
     }
     @Override
     public void onQuestionFiveInput(String input1, String input2) {
-        nums[4]=Float.parseFloat(input1)*1100;
-        nums[5]=Float.parseFloat(input2)*4400;
+        nums[4]=Float.parseFloat(input1)*1100f;
+        nums[5]=Float.parseFloat(input2)*4400f;
     }
 
 }

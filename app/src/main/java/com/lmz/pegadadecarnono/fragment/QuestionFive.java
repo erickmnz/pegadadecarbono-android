@@ -50,18 +50,22 @@ public class QuestionFive extends Fragment implements FragmentToActivity {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding=FragmentQuestionFiveBinding.inflate(inflater,container,false);
-        binding.voos3.setText(String.valueOf(0.00f));
+        binding.voos3.setText(String.valueOf(0));
         binding.voos3.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                binding.voos3.setText("");
+                if(hasFocus){
+                    binding.voos3.setText("");
+                }
             }
         });
-        binding.voos4.setText(String.valueOf(0.00f));
+        binding.voos4.setText(String.valueOf(0));
         binding.voos4.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                binding.voos4.setText("");
+                if(hasFocus){
+                    binding.voos4.setText("");
+                }
             }
         });
         return binding.getRoot();
