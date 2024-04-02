@@ -4,47 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"
-    android:background="#35C86B">
+    android:background="#35C86B"
+    android:configChanges="orientation|screenSize|keyboardHidden"
+    tools:context=".activity.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragcontainer"
-        android:layout_width="407dp"
-        android:layout_height="506dp"
-        android:layout_marginTop="140dp"
+        android:layout_width="389dp"
+        android:layout_height="616dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></androidx.fragment.app.FragmentContainerView>
 
-    <Button
-        android:id="@+id/proximo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#3EC7DC"
-        android:text="@string/pr_ximo"
-        app:backgroundTint="#258290"
+    <RadioGroup
+        android:id="@+id/radioGroup3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="1:1"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline4"
-        app:layout_constraintTop_toBottomOf="@+id/fragcontainer" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="208dp" />
+        <Button
+            android:id="@+id/voltar"
+            android:layout_width="0sp"
+            android:layout_height="78sp"
+            android:layout_weight="1"
+            android:background="#3EC7DC"
+            android:text="@string/voltar"
+            android:textColor="@color/white"
+            app:backgroundTint="#258290" />
 
-    <Button
-        android:id="@+id/voltar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#3EC7DC"
-        android:text="@string/voltar"
-        app:backgroundTint="#258290"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/proximo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragcontainer" />
+        <Button
+            android:id="@+id/proximo"
+            android:layout_width="0sp"
+            android:layout_height="78sp"
+            android:layout_weight="1"
+            android:background="#3EC7DC"
+            android:text="@string/pr_ximo"
+            android:textColor="@color/white"
+            app:backgroundTint="#258290" />
+    </RadioGroup>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

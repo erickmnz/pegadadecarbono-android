@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PegadaDeCarnono</string>
+    <string name="app_name">PegadaDeCarbono</string>
     <string name="pr_ximo">Próximo</string>
     <string name="confirmar">Confirmar</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -14,4 +14,5 @@
     <string name="quantos_vo_s_maiores_que_quatro_horas_voc_fez">Quantos voôs maiores que quatro horas você fez?</string>
     <string name="reciclaPapel">Você recicla papel, jornal ou papelão?</string>
     <string name="reciclaAluminio">Você recicla alumínio?</string>
+    <string name="values">Os quinze países com as maiores emissões per capita:\n1 China 7.44\n2 United States 15.32\n3 India 1.89\n4 Russia 11.45\n5 Japan 9.76\n6 Germany 9.42 \n7 Canada 18.72 \n8 Iran 7.71 \n9 South Korea 11.77 \n10 Indonesia 2.02 \n11 Saudi Arabia \n12 Brazil 2.24 \n13 Mexico 3.63 \n14 Australia 17.15 \n15 South Africa 6.92</string>
 </resources>

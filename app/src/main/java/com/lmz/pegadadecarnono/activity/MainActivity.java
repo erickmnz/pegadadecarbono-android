@@ -6,10 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.lmz.pegadadecarnono.databinding.ActivityMainBinding;
+import com.lmz.pegadadecarnono.fragment.FinalPage;
 import com.lmz.pegadadecarnono.fragment.FrontPage;
 import com.lmz.pegadadecarnono.fragment.QuestionFive;
 import com.lmz.pegadadecarnono.fragment.QuestionFour;
@@ -20,7 +22,7 @@ import com.lmz.pegadadecarnono.fragment.QuestionTwo;
 
 public class MainActivity extends AppCompatActivity implements QuestionOne.QuestionListener,
         QuestionTwo.QuestionListener, QuestionThree.QuestionListener, QuestionFour.QuestionListener,
-        QuestionFive.QuestionListener{
+        QuestionFive.QuestionListener, QuestionSix.QuestionListener{
     private ActivityMainBinding binding;
     private int n;
     private float sum;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
     private QuestionFour q4;
     private  QuestionFive q5;
     private QuestionSix q6;
-
+    private FinalPage ep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
         q4=new QuestionFour();
         q5=new QuestionFive();
         q6=new QuestionSix();
+        ep=new FinalPage();
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         binding.voltar.setVisibility(View.INVISIBLE);
         View view = binding.getRoot();
@@ -133,6 +136,28 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
                     n++;
                     break;
                 }
+                case 6:{
+                    if(!q6.sendToActivity()){
+                        Toast.makeText(this,"Insira um valor!",Toast.LENGTH_SHORT)
+                                .show();
+                        break;
+                    }
+
+                    binding.proximo.setVisibility(View.INVISIBLE);
+                    for(float num:nums){
+                        sum+=num;
+                    }
+                    sum/=907.2f;
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value",String.format("%.2f",sum));
+                    ep.setArguments(bundle);
+                    fm.beginTransaction()
+                            .addToBackStack(null)
+                            .replace(binding.fragcontainer.getId(),ep,"FinalPage")
+                            .commit();
+                    n++;
+                    break;
+                }
             }
         });
         binding.voltar.setOnClickListener(v -> {
@@ -173,6 +198,13 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
                   fm.popBackStack();
                   nums[6]=0f;
                   nums[7]=0f;
+                  binding.proximo.setText("Próximo");
+                  n--;
+                  break;
+              }
+              case 7:{
+                  binding.proximo.setVisibility(View.VISIBLE);
+                  fm.popBackStack();
                   n--;
                   break;
               }
@@ -206,4 +238,15 @@ public class MainActivity extends AppCompatActivity implements QuestionOne.Quest
         nums[5]=Float.parseFloat(input2)*4400f;
     }
 
+    @Override
+    public void onQuestionSixInput(boolean input1, boolean input2) {
+        nums[6]=0f;
+        nums[7]=0f;
+        if(!input1){
+            nums[6]=184;
+        }
+        if(!input2){
+            nums[7]=166;
+        }
+    }
 }

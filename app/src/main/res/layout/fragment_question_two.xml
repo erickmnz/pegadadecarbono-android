@@ -10,10 +10,11 @@
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="422dp"
-        android:layout_height="197dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/conta_gas"
-        android:textSize="50sp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

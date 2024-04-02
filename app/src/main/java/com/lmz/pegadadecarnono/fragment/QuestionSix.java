@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioGroup;
 
 import com.lmz.pegadadecarnono.R;
 import com.lmz.pegadadecarnono.databinding.FragmentQuestionSixBinding;
@@ -23,8 +24,10 @@ public class QuestionSix extends Fragment implements FragmentToActivity {
         if(listener==null){
             return false;
         }
-
-        return false;
+        boolean btn1 =binding.radioButton.isChecked();
+        boolean btn2 = binding.radioButton4.isChecked();
+        listener.onQuestionSixInput(btn1,btn2);
+        return true;
     }
 
     public interface QuestionListener{
